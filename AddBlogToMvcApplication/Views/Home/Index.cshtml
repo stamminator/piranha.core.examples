@@ -1,0 +1,42 @@
+@inject Piranha.IApi Api
+@{
+    ViewBag.Title = "Welcome To The Application";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Welcome To The Application</h1>
+
+            <p>
+                This page is controller by a standard MVC controller. The menu is also
+                controller by the default application.
+            </p>
+
+            <p>
+                The blog archive located at the URL <code>/blog</code> is controller by Piranha and
+                so are the Posts in it. You can log into the Piranha Manager at <code>/manager</code>
+                with the credentials <code>admin</code> &amp; <code>password</code>.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h2>Some images</h2>
+
+            <p>
+                Even though this a standard MVC view you can still access the data in Piranha if you
+                want. Below is a thumbnail listing of all of the available media assets uploaded in
+                Piranha.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        @foreach (var media in Api.Media.GetAll())
+        {
+            <div class="col-sm-3">
+                <img src="@Url.Content(media.PublicUrl)" class="img-thumbnail">
+            </div>
+        }
+    </div>
+</div>
