@@ -31,7 +31,7 @@ namespace AddBlogToMvcApplication
             //
             services.AddPiranhaEF(options => 
                 options.UseSqlite("Filename=./piranha.blog.db"));
-            services.AddPiranhaSimpleSecurity(new SimpleUser 
+            services.AddPiranhaSimpleSecurity(new SimpleUser(Piranha.Manager.Permission.All()) 
             {
                 UserName = "admin", Password = "password"
             });
@@ -65,6 +65,11 @@ namespace AddBlogToMvcApplication
             // Register middleware
             app.UseStaticFiles();
 
+            // This security provider is only for development
+            // purposes
+            app.UsePiranhaSimpleSecurity();
+
+            // Add the middleware needed for a blog
             app.UsePiranhaSites();
             app.UsePiranhaAliases();
             app.UsePiranhaPosts();

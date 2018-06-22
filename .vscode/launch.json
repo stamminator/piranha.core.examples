@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/bin/Debug/netcoreapp2.0/AddBlogToMvcApplication.dll",
+            "program": "${workspaceFolder}/AddBlogToMvcApplication/bin/Debug/netcoreapp2.1/AddBlogToMvcApplication.dll",
             "args": [],
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/AddBlogToMvcApplication",
             "stopAtEntry": false,
             "internalConsoleOptions": "openOnSessionStart",
             "launchBrowser": {
