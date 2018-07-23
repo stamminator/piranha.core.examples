@@ -24,6 +24,7 @@ namespace AddBlogToMvcApplication
             {
                 config.ModelBinderProviders.Insert(0, new Piranha.Manager.Binders.AbstractModelBinderProvider());
             });
+            services.AddPiranhaApplication();
             services.AddPiranhaFileStorage();
             services.AddPiranhaImageSharp();
             //
@@ -70,7 +71,7 @@ namespace AddBlogToMvcApplication
             app.UsePiranhaSimpleSecurity();
 
             // Add the middleware needed for a blog
-            app.UsePiranhaSites();
+            app.UsePiranhaApplication();
             app.UsePiranhaAliases();
             app.UsePiranhaPosts();
             app.UsePiranhaArchives();
