@@ -42,7 +42,7 @@ namespace AddBlogToMvcApplication
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider services)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IApi api)
         {
             if (env.IsDevelopment())
             {
@@ -50,8 +50,7 @@ namespace AddBlogToMvcApplication
             }
 
             // Initialize Piranha
-            var api = services.GetService<IApi>();
-            App.Init(api);
+            App.Init();
 
             // Build content types
             var pageTypeBuilder = new Piranha.AttributeBuilder.PageTypeBuilder(api)

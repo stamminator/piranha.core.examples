@@ -4,7 +4,7 @@ using Piranha.Models;
 namespace AddBlogToMvcApplication.Models
 {
     [PageType(Title = "Blog archive", UseBlocks = false)]
-    public class BlogArchive  : BlogPage<BlogArchive>
+    public class BlogArchive  : ArchivePage<BlogArchive>
     {
     }
 }
